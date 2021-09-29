@@ -1,7 +1,7 @@
 package com.github.devfrogora;
 
 import com.razorpay.Order;
-import com.razorpay.RazorpayClient;
+import com.razorpay.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,7 +19,7 @@ public class FirstServlet extends HttpServlet {
     String secret = "EhNJX9giFfSxLMPchEVkIzUP";
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         out.println("<h2>Welcome to servlet</h2>");
@@ -38,7 +38,7 @@ public class FirstServlet extends HttpServlet {
             Order order = razorpayClient.Orders.create(options);
             System.out.println(amount);
             System.out.println(order);
-            out.println(order);
+//            out.println(order);
 
         } catch (Exception e) {
             out.println("enter valid number : <br>Exception name" + e.getClass() + "<br>Message: " + e.getMessage());
