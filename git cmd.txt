@@ -5,4 +5,4 @@
   git commit -m "servlet starting configuration "
   git status
   git remote add origin git@github.com-neverDieAgain:DevFrogora/devportfolio-backend.git
-  git push -u origin main
+  git push -u origin master
